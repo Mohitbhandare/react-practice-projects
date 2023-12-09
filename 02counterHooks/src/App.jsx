@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  // using the hooks react updte the UI so we useState hooks right now
+  // using the hooks react update the UI so we use useState hooks.
 
   let [counter, setCounter] = useState(15);
 
