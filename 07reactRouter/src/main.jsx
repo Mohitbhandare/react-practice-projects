@@ -8,7 +8,8 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Layout from './Layout.jsx';
-import { About, ContactUs, Home } from './components/index.js';
+import { About, ContactUs, GitHub, Home, User } from './components/index.js';
+import { githubInfoLoader } from './components/GitHub/GitHub.jsx';
 
 // step-1 we can use this process to route
 // const router = createBrowserRouter([
@@ -33,12 +34,17 @@ import { About, ContactUs, Home } from './components/index.js';
 // ]);
 
 // step-2
+// we can also do nested routing example -> /about/mohit/1
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<ContactUs />} />
+      {/* dynamic Routing */}
+      <Route path="user/:userId" element={<User />} />
+      {/* we can optimize the code when we calling the api using the loader  */}
+      <Route loader={githubInfoLoader} path="github" element={<GitHub />} />
     </Route>
   )
 );
