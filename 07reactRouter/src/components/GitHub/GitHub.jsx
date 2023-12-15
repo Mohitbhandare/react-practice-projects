@@ -22,6 +22,7 @@ const GitHub = () => {
 
 export default GitHub;
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const githubInfoLoader = async () => {
   const response = await fetch('https://api.github.com/users/Mohitbhandare');
   return response.json();
